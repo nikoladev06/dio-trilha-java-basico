@@ -1,22 +1,43 @@
+```mermaid
 classDiagram
     class ReprodutorMusical {
-        +exemploMetodo1()
-        +exemploMetodo2(String exemplo)
+        +tocar()
+        +pausar()
+        +selecionarMusica(musica: String)
+    }
+
+    class ReprodutorMusicalImpl {
+        +tocar()
+        +pausar()
+        +selecionarMusica(musica: String)
     }
 
     class AparelhoTelefonico {
-        +exemploMetodo1()
-        +exemploMetodo2(String exemplo)
+        +ligar(numero: String)
+        +atender()
+        +iniciarCorreioVoz()
+    }
+
+    class AparelhoTelefonicoImpl {
+        +ligar(numero: String)
+        +atender()
+        +iniciarCorreioVoz()
     }
 
     class NavegadorInternet {
-        +exemploMetodo1()
-        +exemploMetodo2(String exemplo)
+        +exibirPagina(url: String)
+        +adicionarNovaAba()
+        +atualizarPagina()
     }
 
-    class iPhone {
+    class NavegadorInternetImpl {
+        +exibirPagina(url: String)
+        +adicionarNovaAba()
+        +atualizarPagina()
     }
 
-    iPhone --> ReprodutorMusical
-    iPhone --> AparelhoTelefonico
-    iPhone --> NavegadorInternet
+    ReprodutorMusical <|-- ReprodutorMusicalImpl
+    AparelhoTelefonico <|-- AparelhoTelefonicoImpl
+    NavegadorInternet <|-- NavegadorInternetImpl
+
+```
